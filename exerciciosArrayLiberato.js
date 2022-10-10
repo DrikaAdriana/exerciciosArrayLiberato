@@ -103,29 +103,15 @@ resultante.
 8 8
 
 */
-let valoresInteiros =  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 
+let lista =  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 
 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
-let numerosImpares 
-let numerosPares
-let novaLista 
 
-function buscarImpares(valoresInteiros){ 
-    numerosImpares = valoresInteiros.filter((e) => e % 2 > 0)
-    numerosPares = valoresInteiros.filter((e) => e % 2 === 0)
-    numerosImpares = numerosImpares.map(item => (item, 0))
-    novaLista =  numerosImpares + numerosPares
-    return  novaLista 
-    }
-
-buscarImpares(valoresInteiros);
-
+let listaNova  = lista.map(e => (e % 2 == 1)? 0:e )
+lista.forEach((e, index) => console.log(e, listaNova[index]))
 
 
 
 /*
-
-
-
 
 
 /*
@@ -138,6 +124,30 @@ d) Escreva quantos números são pares;
 e) Escreva quantos números são ímpares;
 */
 
+let listaA = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 
+  21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 
+  44, 45, 46, 47, 48, 49, 50]
+
+let media 
+let quantNumPares 
+let quantNumImpares 
+
+function verificarValores(lista) {
+  let menorNumeroLista = Math.min(...listaA);
+  let indice = listaA.indexOf(menorNumeroLista);
+  let maiorNumeroLista = Math.max(...listaA);
+  let indice2 = listaA.indexOf(maiorNumeroLista);
+  let somaDaLista = listaA.reduce((total, numero) => total + numero, 0); 
+  media = somaDaLista /listaA.length
+  quantNumPares = listaA.filter((e) => e % 2 === 0);
+  quantNumImpares = listaA.filter((e) => e % 2 != 0);
+              
+  
+  return  `O menor valor na lista é ${menorNumeroLista} com o indice ${indice}, o maior valor na lista é o ${maiorNumeroLista} com indice ${indice2} 
+a media aritmética dos valores somados é ${media} na lista tem ${quantNumPares.length } números pares e ${quantNumImpares.length} números ímpares `
+} 
+console.log(verificarValores(listaA));
+
 
 
 
@@ -145,10 +155,21 @@ e) Escreva quantos números são ímpares;
 8. Escrever um algoritmo que lê a temperatura de 25 pessoas e as escreve,
 colocando um destaque **temp[i]** em todas que forem acima de 38.
 */
+let  temperaturCorporal = [35, 40, 35.6, 38.9, 40.8, 36.2, 43.4, 40.0, 36.2, 37.9, 38.6,
+43.2, 37.9, 36.8, 39.2, 35.7, 36.8, 39.8, 36.5, 36.8, 37.2, 36.9, 37.8, 36.9, 37.1];
+let comFebre = [];
 
-
-
-
+function calculandoTemperatura(lista ){
+  for(let i = 0; i < temperaturCorporal.length; i++) {
+    if(temperaturCorporal[i] > 38){
+      comFebre.push(temperaturCorporal[i])
+    }
+  }
+  return comFebre
+}
+console.log(calculandoTemperatura(temperaturCorporal));
+  
+  
 
 
 /*
@@ -164,6 +185,32 @@ lado a lado.
 DESAFIO
 */
 
+let lista1 =  [4, 7, 8, 9]
+let mencao =  ['NA', 'A', 'AP'] 
+let avaliacaoNA 
+let avaliacaoA 
+let avaliacaoAP 
+
+avaliacaoNA = lista1.filter((e) => e < 7);
+avaliacaoA = lista1.filter((e) => e < 8);
+avaliacaoAP = lista1.filter((e) => e > 8);
+
+  if (avaliacaoNA) {
+    avaliacaoNA.forEach((e) => console.log(e, mencao[0]))
+  }if (avaliacaoA){
+    avaliacaoA.forEach((e) => console.log(e, mencao[1]))
+  }if (avaliacaoAP){
+    avaliacaoAP.forEach((e) => console.log(e, mencao[2]))
+  }
+  
+
+    
+
+
+
+
+
+
 
 
 
@@ -173,5 +220,8 @@ DESAFIO
 seguir, os valores lidos para um vetor c[20] e os escreva de maneira ordenada
 crescente  */
 
+let vetorA = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let vetorB = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21];
+let vetorC = vetorA.concat(vetorB)
+console.log(vetorC)
 
- 
