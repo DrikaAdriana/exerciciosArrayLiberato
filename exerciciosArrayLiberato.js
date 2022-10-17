@@ -185,15 +185,15 @@ lado a lado.
 DESAFIO
 */
 
-let lista1 =  [4, 7, 8, 9]
+let lista1 =  [-1, -2, -3, -4, -5, -6,  7.5, 7.1, 7.8, -7, -8, -9, -10, 1, 2, 7.9, 3, 4, 5, 6, 7, 8, 9, 10]
 let mencao =  ['NA', 'A', 'AP'] 
 let avaliacaoNA 
 let avaliacaoA 
 let avaliacaoAP 
 
-avaliacaoNA = lista1.filter((e) => e < 7);
-avaliacaoA = lista1.filter((e) => e < 8);
-avaliacaoAP = lista1.filter((e) => e > 8);
+avaliacaoNA = lista1.filter((e) => e <= 7);
+avaliacaoA = lista1.filter((e) => e < 8 && e > 7);
+avaliacaoAP = lista1.filter((e) => e >= 8);
 
   if (avaliacaoNA) {
     avaliacaoNA.forEach((e) => console.log(e, mencao[0]))
@@ -204,15 +204,6 @@ avaliacaoAP = lista1.filter((e) => e > 8);
   }
   
 
-    
-
-
-
-
-
-
-
-
 
 
 /*
@@ -220,8 +211,9 @@ avaliacaoAP = lista1.filter((e) => e > 8);
 seguir, os valores lidos para um vetor c[20] e os escreva de maneira ordenada
 crescente  */
 
-let vetorA = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-let vetorB = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21];
+let vetorA = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+let vetorB = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20 ];
 let vetorC = vetorA.concat(vetorB)
 console.log(vetorC)
+
 
